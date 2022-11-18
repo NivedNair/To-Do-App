@@ -35,7 +35,7 @@ const Login = () => {
             })
 
     }
-    const leftPart = (
+    const addTodo = (
         <div className="text">
             <h1>LOGIN</h1>
             <p>LOGIN
@@ -52,7 +52,7 @@ const Login = () => {
 
     </div>)
     return (
-        <MainContainer leftPart={leftPart} rightPart={rightPart} />
+        <MainContainer addTodo={addTodo} rightPart={rightPart} />
 
 
     );

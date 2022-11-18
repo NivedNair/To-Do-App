@@ -58,7 +58,7 @@ const Home = () => {
 
                 })
 
-                setusername(user.displayName);
+                
 
             }
             else if (!user) {
@@ -87,7 +87,7 @@ const Home = () => {
 
     }
 
-    const leftPart = (<div className="leftdiv">
+    const addTodo = (<div className="leftdiv">
         <h1>TODO</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet at eleifend feugiat vitae faucibus nibh dolor dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet at eleifend feugiat vitae faucibus nibh dolor dui. </p>
         <div className="textandbutton">
@@ -103,8 +103,8 @@ const Home = () => {
         <div className="topbar">
             <h1>TODO LIST</h1>
             <div className="rightcontent">
-                <h2>Hey,  {username}</h2>
-                <MdLogout onClick={signout} />
+            <h2>Logout</h2>
+                <MdLogout size={40} onClick={signout} />
             </div>
         </div>
         <div className="searchanddrop">
@@ -131,7 +131,7 @@ const Home = () => {
     return (
         <div>
 
-            <MainContainer leftPart={leftPart} rightPart={rightPart} />
+            <MainContainer addTodo={addTodo} rightPart={rightPart} />
 
 
         </div>
