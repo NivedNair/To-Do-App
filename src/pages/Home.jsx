@@ -14,19 +14,19 @@ import { MdLogout } from 'react-icons/md'
 
 const Home = () => {
 
-    const [titleinput, settitleinput] = useState('');//state for title
-    const [descinput, setdescinput] = useState('');//state for description
-    const [values, setvalues] = useState([]);//state for values fetched from database
-    const [filteredvalue, setfilteredvalue] = useState([]);//state for filtered values according to our view
-    const [query, setquery] = useState('');//state for query from search field
-    const [view, setview] = useState('all');//state for view from the dropdown menu
-    const navigate = useNavigate();//navigate
+    const [titleinput, settitleinput] = useState('');
+    const [descinput, setdescinput] = useState('');
+    const [values, setvalues] = useState([]);
+    const [filteredvalue, setfilteredvalue] = useState([]);
+    const [query, setquery] = useState('');
+    const [view, setview] = useState('all');
+    const navigate = useNavigate();
 
 
-    //adding tasks to database
+    
 
 
-    useEffect(() => {//to filter values according to the view
+    useEffect(() => {
 
         let displayvalues = values.filter((v) => v.title.toLowerCase().includes(query.toLowerCase()));
         if (view === "deleted") {
@@ -45,10 +45,7 @@ const Home = () => {
 
     }, [values, query, view])
 
-    useEffect(() => {//to get  data from database and to update user info
-
-
-
+    useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 onValue(ref(database, '/' + auth.currentUser.uid), (snapshot) => {
@@ -63,10 +60,10 @@ const Home = () => {
         })
 
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+       
     }, [])
 
-    const signout = () => {//signout
+    const signout = () => {
 
         auth.signOut()
             .then(() => {

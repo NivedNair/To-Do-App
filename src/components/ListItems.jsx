@@ -4,8 +4,8 @@ import { setFav, setDel, setComp, setRestore } from "../firebase/service";
 
 
 const ListItems = (props) => {
-    const item = props.item;//individual item
-    const completedstyle = {//text decoration/ color
+    const item = props.item;
+    const completedstyle = {
         color: "green"
     }
 

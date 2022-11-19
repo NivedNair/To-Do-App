@@ -5,27 +5,26 @@ import GoogleButton from 'react-google-button'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import Dashboard from "../components/Dashboard";
-/////////////imports
 
 
 
 const Login = () => {
-    const navigate = useNavigate();// initialise navigate
+    const navigate = useNavigate();
         useEffect(() => {
-        auth.onAuthStateChanged((user) =>//navigate to home only if the user is logged in
+        auth.onAuthStateChanged((user) =>
         {
             if (user) {
                 navigate("/Home")
             }
 
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        
     }, [])
 
-    const handleclick = () => {//function to login
+    const handleclick = () => {
         signInWithPopup(auth, provider)
             .then(() => {
-                navigate("/Home")//navigate to home after succesful login
+                navigate("/Home")
             }
             )
 
