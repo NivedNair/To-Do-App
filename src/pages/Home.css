@@ -89,6 +89,7 @@
 .topbar {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 
 
 }
@@ -109,3 +110,12 @@
 
 
 }
+
+.vl {
+    border-left: 2px solid rgb(21, 204, 255);
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }

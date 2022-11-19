@@ -4,17 +4,14 @@ import "./Login.css"
 import GoogleButton from 'react-google-button'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
-import MainContainer from "../components/MainContainer";
+import Dashboard from "../components/Dashboard";
 /////////////imports
 
 
 
 const Login = () => {
-
     const navigate = useNavigate();// initialise navigate
-
-
-    useEffect(() => {
+        useEffect(() => {
         auth.onAuthStateChanged((user) =>//navigate to home only if the user is logged in
         {
             if (user) {
@@ -29,10 +26,8 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(() => {
                 navigate("/Home")//navigate to home after succesful login
-
-
-
-            })
+            }
+            )
 
     }
     const addTodo = (
@@ -52,7 +47,7 @@ const Login = () => {
 
     </div>)
     return (
-        <MainContainer addTodo={addTodo} rightPart={rightPart} />
+        <Dashboard addTodo={addTodo} rightPart={rightPart} />
 
 
     );

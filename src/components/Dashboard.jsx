@@ -1,16 +1,17 @@
-import "./MainContainer.css"
-const MainContainer = (props) => {
+import "./Dashboard.css"
+const Dashboard = (props) => {
     return (
-
         <div className="login">
             <div className="addtodo">
                 {props.addTodo}
             </div>
-            <div className="vl"></div>
+            
             <div className="rightpart">
                 {props.rightPart}
+
             </div>
         </div>
+
     );
 }
-export default MainContainer;
+export default Dashboard;

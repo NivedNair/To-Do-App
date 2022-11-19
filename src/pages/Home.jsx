@@ -1,7 +1,7 @@
 
 import { auth, database } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import MainContainer from "../components/MainContainer";
+import Dashboard from "../components/Dashboard";
 import { useState, useEffect } from "react";
 import { onValue, ref } from "firebase/database";
 import "./Home.css"
@@ -20,7 +20,6 @@ const Home = () => {
     const [filteredvalue, setfilteredvalue] = useState([]);//state for filtered values according to our view
     const [query, setquery] = useState('');//state for query from search field
     const [view, setview] = useState('all');//state for view from the dropdown menu
-    const [username, setusername] = useState('');//state for user details
     const navigate = useNavigate();//navigate
 
 
@@ -57,25 +56,15 @@ const Home = () => {
                     setvalues(data);
 
                 })
-
-                
-
             }
             else if (!user) {
                 navigate("/");
-
             }
-
-
         })
 
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-
-
-
 
     const signout = () => {//signout
 
@@ -107,6 +96,7 @@ const Home = () => {
                 <MdLogout size={40} onClick={signout} />
             </div>
         </div>
+        <div className="vl"></div>
         <div className="searchanddrop">
             <div className="searchbar">
                 <input type="text" placeholder="Search" value={query} onChange={(e) => setquery(e.target.value)} />
@@ -130,13 +120,8 @@ const Home = () => {
     </div>)
     return (
         <div>
-
-            <MainContainer addTodo={addTodo} rightPart={rightPart} />
-
-
+            <Dashboard addTodo={addTodo} rightPart={rightPart} />
         </div>
-
-
     );
 }
 export default Home;
