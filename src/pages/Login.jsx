@@ -4,7 +4,6 @@ import "./Login.css"
 import GoogleButton from 'react-google-button'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
-import Dashboard from "../components/Dashboard";
 
 
 
@@ -46,7 +45,16 @@ const Login = () => {
 
     </div>)
     return (
-        <Dashboard addTodo={addTodo} rightPart={rightPart} />
+        <div className="login" >
+            <div className="addtodo">
+                {addTodo}
+            </div>
+            
+            <div className="rightpart">
+                {rightPart}
+
+            </div>
+        </div>
 
 
     );

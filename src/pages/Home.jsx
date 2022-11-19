@@ -1,7 +1,6 @@
 
 import { auth, database } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "../components/Dashboard";
 import { useState, useEffect } from "react";
 import { onValue, ref } from "firebase/database";
 import "./Home.css"
@@ -116,8 +115,15 @@ const Home = () => {
 
     </div>)
     return (
-        <div>
-            <Dashboard addTodo={addTodo} rightPart={rightPart} />
+        <div className="login" >
+            <div className="addtodo">
+                {addTodo}
+            </div>
+            
+            <div className="rightpart">
+                {rightPart}
+
+            </div>
         </div>
     );
 }

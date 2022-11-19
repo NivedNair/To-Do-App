@@ -111,11 +111,26 @@
 
 }
 
-.vl {
-    border-left: 2px solid rgb(21, 204, 255);
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-  }
+
+  .login {
+    display: flex;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.addtodo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.rightpart {
+    flex: 1;
+    
+  
+
+}
+
+
+
